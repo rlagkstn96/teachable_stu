@@ -21,7 +21,7 @@
     <%
         } else {      
     %>        
-            alert("로그인 실패!");
+            alert("로그인 실패!!");
             location.href = "login.html";
     <%
         }
