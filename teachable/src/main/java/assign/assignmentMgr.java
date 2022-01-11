@@ -14,7 +14,7 @@ public class assignmentMgr {
 	private String password;
 
 	public assignmentMgr() {
-		this.databaseUrl = "jdbc:mysql://localhost/hysight";
+		this.databaseUrl = "jdbc:mysql://54.180.195.102:59448/hysight";
 		this.useriD = "root";
 		this.password = "1234";
 	}
@@ -36,7 +36,6 @@ public class assignmentMgr {
 		conn = getconnection();
         statement = conn.createStatement();
         String query = "SELECT p.pid, p.pname, a.aname, c.cname, u.sname FROM posture p, class c, assignment a, users u WHERE u.sid = a.uid AND c.cid = a.cid AND p.aid = a.aid AND u.id = '" + getId + "'";
-        System.out.println(query);
 		res = statement.executeQuery(query);
 		while(res.next()) {
             assignment as = new assignment();

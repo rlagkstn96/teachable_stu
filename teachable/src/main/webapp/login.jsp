@@ -14,7 +14,7 @@
 	<script>
     <%    
         if(info != false){
-            request.setAttribute("id",id);
+        	session.setAttribute("id", id);
     %>        
             alert("로그인 성공!");
             location.href = "MyPage.jsp?id=<%=id%>";
