@@ -13,7 +13,7 @@ public class loginMgr {
 	private String password;
 
 	public loginMgr() {
-		this.databaseUrl = "jdbc:mysql://localhost/hysight";
+		this.databaseUrl = "jdbc:mysql://54.180.195.102:59448/hysight";
 		this.useriD = "root";
 		this.password = "1234";
 	}
