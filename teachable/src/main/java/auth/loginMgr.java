@@ -2,6 +2,7 @@ package auth;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -49,5 +50,35 @@ public class loginMgr {
         conn.close();
         
 		return logininfo; 
+	}
+	
+	public void joinLoginInfo(String id, String password, String sname, String email, String birth, String sex, String phone, String address, String gubun, String sclass) throws SQLException, ClassNotFoundException {
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			conn = getconnection();
+
+			String mySQL = "INSERT INTO student INSERT INTO users (`id`, `password`, `sname`, `email`, `birth`, `sex`, `phone`, `address`, `gubun`, `sclass`) VALUES (?, ?, ?, ?, ?, ?,?,?,?,?)";
+			pstmt = conn.prepareStatement(mySQL);
+			pstmt.setString(1,id);
+			pstmt.setString(2, password);
+			pstmt.setString(3, sname);
+			pstmt.setString(4, email);
+			pstmt.setString(5, birth);
+			pstmt.setString(6, sex);
+			pstmt.setString(7, phone);
+			pstmt.setString(8, address);
+			pstmt.setString(9, gubun);
+			pstmt.setString(10, sclass);
+			pstmt.executeUpdate();
+
+			pstmt.close();
+			conn.close();
+		} catch (Exception ex) {
+			System.out.println("Exception" + ex);
+		}
+		
+		
 	}
 }

@@ -53,8 +53,8 @@ public class assignmentMgr {
         
 		return vecList; 
 	}
-    
-    public int DeleteAssignInfo(String getPId) throws SQLException, ClassNotFoundException {
+	
+	public int DeleteAssignInfo(String getPId) throws SQLException, ClassNotFoundException {
 		int count = 0;
         
 		Connection conn = null;
